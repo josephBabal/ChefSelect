@@ -6,17 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write \"app/**/*.{js,jsx,ts,tsx,css,scss,md}\" \"components/**/*.{js,jsx,ts,tsx,css,scss,md}\" \"hooks/**/*.{js,jsx,ts,tsx,css,scss,md}\" \"data/**/*.{js,jsx,ts,tsx,css,scss,md}\" \"styles/**/*.{js,jsx,ts,tsx,css,scss,md}\" \"utils/**/*.{js,jsx,ts,tsx,css,scss,md}\" \"next.config.mjs\" \"package.json\"  \"prettier.config.ts\" \"README.md\" \"tsconfig.json\""
   },
   "dependencies": {
+    "classnames": "^2.5.1",
+    "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.4"
+    "react-icons": "^5.2.1"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
-    "@types/react-dom": "^18"
+    "@types/react-dom": "^18",
+    "prettier": "^3.2.5",
+    "typescript": "^5"
   }
 }

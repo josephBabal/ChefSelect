@@ -1,0 +1,30 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item .image {
+  border-radius: 0;
+  aspect-ratio: 16 / 9;
+}
+
+.item .name {
+  font-weight: 600;
+  color: var(--title-color);
+  font-size: var(--text-md-sm);
+}
+
+@media screen and (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 48px;
+    column-gap: 40px;
+  }
+}

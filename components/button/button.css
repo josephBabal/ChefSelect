@@ -1,0 +1,26 @@
+/* buttons */
+.btn {
+  padding: 8px 16px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.btn--primary {
+  background-color: var(--primary-color);
+  color: var(--bg-text);
+  border-radius: 500px;
+  border: none;
+}
+
+.btn--secondary {
+  background-color: var(--primary-color);
+  color: var(--bg-text);
+  border-radius: 5px;
+  border: none;
+}
+
+.plan-btn {
+  padding-block: var(--spacing-4);
+  font-size: var(--text-regular);
+  font-weight: 500;
+}

@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  max-width: var(--plan-mx-width);
+  /* margin-top: var(--spacing-6); */
+  padding: var(--spacing-6);
+  background: var(--bg-secondary);
+  border-radius: 5px;
+}
+
+.itemContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
