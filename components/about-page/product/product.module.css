@@ -1,0 +1,50 @@
+.gridProduct {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.gridProduct .child1 {
+  grid-area: initial;
+}
+.gridProduct .child2 {
+  grid-area: initial;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-block: auto;
+
+  width: 100%;
+}
+
+.flex > * {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .gridProduct {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 64px;
+  }
+
+  .gridProduct .child1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .gridProduct .child2 {
+    grid-area: 1 / 2 / 2 / 4;
+  }
+
+  .flex {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .flex > * {
+    width: 50%;
+    gap: 32px;
+  }
+}

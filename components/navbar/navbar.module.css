@@ -1,0 +1,193 @@
+.headerContainer {
+  padding: 16px var(--min-padding-x);
+  max-width: 1280px;
+  color: var(--title-color);
+}
+
+.headerContainer:has(.navbar.isActive) {
+  background-color: var(--primary-color);
+}
+
+.headerContainer:has(.navbar.isActive) .logo {
+  color: var(--bg-text);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: var(--heading-6);
+  z-index: 100;
+}
+
+#nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--spacing-2);
+}
+
+/* Navbar Items */
+.navbar {
+  background-color: var(--primary-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  margin: var(--spacing-12) auto;
+  width: 100%;
+  gap: 32px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  z-index: 98;
+  transition: transform 400ms ease-in-out;
+}
+
+.navbar.isActive {
+  display: flex;
+  overflow-y: hidden !important;
+  /* transform: translateX(0%); */
+}
+
+.navbar .navLink {
+  position: relative;
+  display: block;
+  margin-top: 1.5rem;
+  color: var(--bg-text);
+  font-weight: 600;
+  font-size: var(--heading-5);
+}
+
+.navbar .navLink::after,
+.navbar .navLoginBtn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--background);
+  transition: width 0.2s ease-in-out;
+}
+
+.navbar .navLink:hover::after,
+.navbar .navLoginBtn:hover::after {
+  width: 100%;
+}
+
+.navbar .divider {
+  width: 100%;
+  background-color: var(--border-color);
+  height: 1px;
+}
+
+.navbar .navLoginBtn {
+  position: relative;
+  color: var(--bg-text);
+  font-weight: 500;
+  font-size: var(--heading-6);
+}
+
+.hamburger {
+  --bar-width: 32px;
+  --bar-height: 2px;
+  --hamburger-gap: 8px;
+  --hamburger-transition: 300ms ease-in-out;
+  --hamburger-width: 35px;
+  --hamburger-height: 35px;
+
+  position: relative;
+  display: block;
+
+  width: var(--hamburger-width);
+
+  appearance: none;
+  background: none;
+  cursor: pointer;
+}
+
+.hamburger::before,
+.hamburger::after,
+.hamburger span {
+  content: "";
+  display: block;
+  margin: 6px 0px;
+  width: 100%;
+  height: var(--bar-height);
+  background-color: var(--text-color);
+  transition: transform var(--hamburger-transition);
+}
+
+/* Hamburger animation */
+.hamburger.isActive::before {
+  background-color: var(--bg-text);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.hamburger.isActive::after {
+  background-color: var(--bg-text);
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.hamburger.isActive span {
+  opacity: 0;
+  width: 0;
+}
+
+/* Login Button */
+.loginBtn {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .headerContainer {
+    background-color: none;
+    margin-inline: auto;
+  }
+  .navbar {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    margin: 0 auto;
+    height: auto;
+    background-color: transparent;
+    transform: none; /* Reset transform */
+    z-index: auto; /* Reset z-index if necessary */
+  }
+
+  .navbar .navLink {
+    margin-block: 0;
+    font-size: var(--text-regular);
+    color: var(--title-color);
+  }
+
+  .navbar .navLink::after {
+    background-color: var(--title-color);
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .loginBtn {
+    display: block;
+    padding: 8px 24px;
+    border-radius: 50px;
+    border: 1px solid black;
+    font-size: var(--text-regular);
+    color: var(--title-color);
+    transition: 200ms ease-in-out;
+  }
+
+  .loginBtn:hover {
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--bg-text);
+  }
+}
