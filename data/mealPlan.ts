@@ -12,8 +12,8 @@ export const servingsPerMealData: MealPlan[] = [
   },
   {
     id: 1,
-    name: "4",
-    value: 4,
+    name: "6",
+    value: 6,
   },
 ];
 
