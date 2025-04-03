@@ -1,13 +1,38 @@
+"use client";
+
 import Button from "@/components/button/Button";
 import Grid2Layout from "../../layouts/Grid-2-layout";
 import ContainerLayout from "../../layouts/ContainerLayout";
 import styles from "./hero.module.css";
 import "@styles/grids.css";
+
+import { gsap } from "gsap";
+import { useEffect, useRef } from "react";
 const Hero = () => {
+  const flexColRef = useRef(null);
+  const heroImgRef = useRef(null);
+
+  useEffect(() => {
+    const timeline = gsap.timeline();
+
+    timeline.fromTo(
+      flexColRef.current,
+      { opacity: 0, y: 200 },
+      { opacity: 1, y: 0, duration: 1.5 }
+    )
+    .fromTo(
+      heroImgRef.current,
+      { opacity: 0, y: 200 },
+      { opacity: 1, y: 0, duration: 1.5 },
+      "0"
+    );
+  }, []);
+
+
   return (
     <ContainerLayout>
       <Grid2Layout>
-        <div className={styles.flexCol}>
+        <div ref={flexColRef} className={styles.flexCol}>
           <h1>Discover Freshness at Your Doorstep</h1>
           <p className={`${styles.subText}`}>
             {" "}
@@ -17,7 +42,7 @@ const Hero = () => {
           <Button text="Explore plans" type="primary" href="/plans" />
         </div>
 
-        <img className={`${styles.heroImg}`} src="/images/home-1920px.jpg" />
+        <img ref={heroImgRef} className={`${styles.heroImg}`} src="/images/home-1920px.jpg" />
       </Grid2Layout>
     </ContainerLayout>
   );
